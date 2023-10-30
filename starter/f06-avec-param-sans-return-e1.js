@@ -1,6 +1,6 @@
 /*****************************
-* 020 - Fonctions - Préalable
-*/
+ * 020 - Fonctions - Préalable
+ */
 
 // 4. PASSAGE DE PARAMÈTRE : FONCTION AVEC PARAMÈTRE (SANS RETURN)
 
@@ -15,6 +15,16 @@
 // et puis de déclarer une AUTRE fonction pour calculer le double de 24
 // et puis de déclarer une AUTRE fonction pour calculer le double de 128
 // etc. et ainsi de suite à chaque fois qu'on veut calculer le double d'un nouveau nombre 
+*/
+
+/*
+const nbre = parseInt(prompt("Entrez un nombre à doubler :"))
+
+function double() {
+    console.log(`Le double de ${nbre} est ${nbre * 2}`);
+}
+
+double();
 */
 
 /*
@@ -36,3 +46,12 @@
                      - le double de 24 ;
                      - le double de 128.
 */
+
+function double(nombre) {
+    console.log(`Le double de ${nombre} est ${nombre*2}`)
+}
+
+double(3);
+double(10);
+double(24);
+double(128);

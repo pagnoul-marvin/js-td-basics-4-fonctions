@@ -22,7 +22,20 @@
 
 // Utilisation de la fonction pour saluer Thomas dans la console
 
+const bonjour = function (prenom) {
+    const message = `Bonjour ${prenom} !`
+    return message;
+}
 
+console.log(bonjour("Thomas"));
+
+
+const bonjour2 = prenom => {
+    const message2 = `Bonjour ${prenom} !`
+    return message2;
+}
+
+console.log(bonjour2("Sophie"));
 
 /*
 N.B. Dans certains cas particuliers, on peut simplifier la syntaxe des fonctions fléchées :
@@ -42,3 +55,6 @@ N.B. Dans certains cas particuliers, on peut simplifier la syntaxe des fonctions
 
 // Utilisation de la fonction pour saluer Thomas dans la console
 
+const bonjour3 = prenom => {return `Bonjour ${prenom} !`;}
+
+console.log(bonjour3("David"));

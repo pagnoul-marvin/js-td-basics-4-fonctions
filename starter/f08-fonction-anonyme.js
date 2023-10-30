@@ -15,11 +15,13 @@
 */
 
 // Expression de fonction sans paramètre ni return
-
+function direbonjour() {
+    console.log("Bonjour !");
+}
 
 // Appel de la fonction
 
-
+direbonjour();
 
 // b) sans paramètre mais avec return
 
@@ -30,11 +32,14 @@
 */
 
 // Expression de fonction sans paramètre mais avec return
-;
+
+function direBonjour2() {
+    return "Bonjour !";
+}
 
 // Utilisation de la fonction pour afficher "Bonjour !" dans la console
 
-
+console.log(direBonjour2());
 
 // c) avec paramètre et return
 
@@ -45,6 +50,15 @@
    - retourne ce message
 - Utilisez-la pour saluer Thomas dans la console
 */
+
+
+function direBonjour3(prenom) {
+    const message2 = `Bonjour ${prenom} !`;
+    return message2;
+}
+
+console.log(direBonjour3("Thomas"));
+
 
 // Expression de fonction avec paramètre et return
 
