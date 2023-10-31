@@ -14,6 +14,30 @@ Aide : votre fonction s'exécute avec le pattern suivant : calculer(nb1, "+", nb
 
 // Déclaration de la fonction calculer
 
+const operation = prompt("Quelle opération voulez-vous effectuer ?");
+
+const chiffre1 = parseInt(prompt("Quel est votre chiffre minimal ?"));
+const chiffre2 = parseInt(prompt("Quel est votre chiffre maximal ?"));
+
+function calculer(min, max) {
+    switch (operation) {
+        case "addition" :
+            console.log(`${chiffre1} + ${chiffre2} = ${chiffre1 + chiffre2}`);
+            break;
+        case "soustraction" :
+            console.log(`${chiffre1} - ${chiffre2} = ${chiffre1 - chiffre2}`);
+            break;
+        case "multiplication" :
+            console.log(`${chiffre1} * ${chiffre2} = ${chiffre1 * chiffre2}`);
+            break;
+        case "division" :
+            console.log(`${chiffre1} / ${chiffre2} = ${chiffre1 / chiffre2}`);
+            break;
+        default :
+            console.log("Cette opéation n'existe pas");
+    }
+}
 
 // Utilisation de la fonction calculer
 
+calculer(`${chiffre1}`, `${chiffre2}`);

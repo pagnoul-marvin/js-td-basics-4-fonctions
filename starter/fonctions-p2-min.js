@@ -17,8 +17,21 @@ N.B. Faites deux versions :
 
 // Utilisation de la fonction calcMin pour calculer le minimum
 
+function calcMin (min,max) {
+    const calcul = `Le minimum entre ${min} et ${max} est ${min}.`;
+    return calcul;
+}
+
+console.log(calcMin("15","20"));
 
 // Version avec une arrow function
+
+const calcMin2 = (min,max) => {
+    const calcul2 = `Le minimum entre ${min} et ${max} est ${min}.`;
+    return calcul2;
+}
+console.log(calcMin2("20","25"));
+
 
 // Utilisation de la fonction calcMinArrow pour calculer le minimum
 
@@ -27,4 +40,6 @@ N.B. Faites deux versions :
 const calcMinConcise = (a, b) => (a < b) ? a : b;
 
 // Utilisation de la fonction calcMinConcise pour calculer le minimum
+
+
 
