@@ -1,6 +1,6 @@
 /*****************************
-* 020 - Fonctions
-*/
+ * 020 - Fonctions
+ */
 
 // 1. Fonction avec un paramètre et un return
 
@@ -9,6 +9,8 @@
 2. À l'intérieur de la fonction, calculez l'âge de la personne en soustrayant birthYear de l'année courante.
 3. Utilisez un return pour renvoyer l'âge calculé.
 */
+
+//const birthday = prompt("Entrez votre année de naissance : "); //avoir l'année de naissance de l'utilisateur
 
 
 /*
@@ -37,6 +39,22 @@ Utilisez la fonction calculateAge que vous venez de créer pour calculer
 */
 
 
+function giveYearsUntilRetirement(year, firstName) {
+    function calculateAge() {
+        const currentYear = new Date();
+        const age = currentYear.getFullYear() - year;
+        console.log(`${firstName} a ${age} ans.`);
+        return age;
+    }
+    const retirement = 65 - calculateAge();
+    if (retirement > 0) {
+        return `${firstName} prendra sa pension dans ${retirement} ans.`;
+    } else {
+        return `${firstName} est déjà pensionné(e).`;
+    }
+}
 
-
+console.log(giveYearsUntilRetirement(1990, "John"));
+console.log(giveYearsUntilRetirement(1948, "Mike"));
+console.log(giveYearsUntilRetirement(1969, "Jane"));
 
