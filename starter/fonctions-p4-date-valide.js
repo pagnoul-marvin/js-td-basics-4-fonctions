@@ -10,52 +10,45 @@ FONCTIONS - PRÉPA 4 : Date valide - version 2
 */
 
 
-// Demander à l'utilisateur de saisir une date
-
-const jour = prompt("Entrez un jour :");
-const mois = prompt("Entrez un mois :");
-const annee = prompt("Entrez une année :");
+const jour = parseInt(prompt('Entrez le jour'));
+const mois = parseInt(prompt('Entrez le mois'));
+const annee = parseInt(prompt('Entrez le année'));
 
 let isValid = true;
 
-// Fonction pour vérifier si une année est bissextile
-
-
-// Fonction pour vérifier si une date est valide
-
-
 function valid() {
-    let isBissextile = true;
+    let isBissextile = false;
 
     function bissextile() {
         if (((annee % 4 === 0) && (!annee % 100 === 0)) || annee % 400 === 0) {
             isBissextile = true;
-        } else {
-            isBissextile = false;
         }
     }
 
     bissextile();
-    if ((isNaN(jour)) || isNaN(mois) || isNaN(annee)) {
+    if (isNaN(jour) || isNaN(mois) || isNaN(annee)) {
         isValid = false;
     }
-    if ((mois > 12) || (mois < 1)) {
+    if (jour < 1 || jour > 31) {
+        isValid = false;
+    }
+    if (mois < 1 || mois > 12) {
         isValid = false;
     }
     if (annee < 1) {
         isValid = false;
     }
-    if ((jour > 31) || (jour < 1)) {
-        isValid = false;
-    }
+
     switch (mois) {
         case 2 :
-            if (isBissextile === true) {
+            if (isBissextile) {
                 if (jour > 29) {
                     isValid = false;
                 }
             } else {
-                isValid = true;
+                if (jour > 28) {
+                    isValid = false;
+                }
             }
             break;
         case 4 :
@@ -65,16 +58,16 @@ function valid() {
             if (jour > 30) {
                 isValid = false;
             }
-            break;
     }
 }
 
-
-// Utilisation de la fonction isValid pour vérifier la date
-
 valid();
 if (isValid === true) {
-    console.log(`Nous sommes le ${jour} ${mois} ${annee}.`);
+    console.log(`Nous sommes le ${jour} ${mois} ${annee}`);
 } else {
-    console.log("La date n'est pas valide");
+    console.log(`Ce n'est pas une date valide`);
 }
+
+
+
+
