@@ -38,7 +38,7 @@ Utilisez la fonction calculateAge que vous venez de créer pour calculer
 	- Jane (née en 1969)
 */
 
-
+/*
 function giveYearsUntilRetirement(year, firstName) {
     function calculateAge() {
         const currentYear = new Date();
@@ -57,4 +57,25 @@ function giveYearsUntilRetirement(year, firstName) {
 console.log(giveYearsUntilRetirement(1990, "John"));
 console.log(giveYearsUntilRetirement(1948, "Mike"));
 console.log(giveYearsUntilRetirement(1969, "Jane"));
+*/
+
+const retraite = {
+    nom: ["John", "Mike", "Jane"],
+    birthdate: [1990, 1948, 1969],
+    giveYearsUntilRetirement(nom, birthdate) {
+        const date = new Date();
+        const currentYear = date.getFullYear();
+        const year = currentYear - birthdate;
+        const retirement = 65 - year;
+        if (retirement < 0) {
+            return `${nom} est déjà à la retaite`;
+        } else {
+            return `Il reste ${retirement} ans à ${nom}`;
+        }
+    }
+}
+
+console.log(retraite.giveYearsUntilRetirement(`${retraite.nom[0]}`, `${retraite.birthdate[0]}`));
+console.log(retraite.giveYearsUntilRetirement(`${retraite.nom[1]}`, `${retraite.birthdate[1]}`));
+console.log(retraite.giveYearsUntilRetirement(`${retraite.nom[2]}`, `${retraite.birthdate[2]}`));
 
